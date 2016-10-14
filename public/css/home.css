@@ -1,10 +1,11 @@
 /*----------------Banner Style-------------------*/
 #banner {
     background-color: #00ADB5;
-    background-image: url(/public/images/BannerGeo.png);
+    background-image: url(/../images/BannerGeo.png);
     color: #fff;
-    padding: 100px 25px;
+    padding: 150px 25px;
     font-family: Montserrat, sans-serif;
+    height: 500px;
 }
 
 /*----------------Back containers colors-------------------*/
