@@ -4,10 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');
+var session = require('express-session');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+
+require('./bin/passport')(passport);// pass passport for configuration
+
 
 //Indexing routes
 var routes = require('./app/routes/index');
+var users = require('./app/routes/users');
 
 //Declarate express
 var app = express();
@@ -30,5 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes where api calls
 app.use('/', routes);
+app.use('/user', users);
+
+//Passport Init
+app.use(session({ secret: 'nosoy100tifico' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
 
 module.exports = app;

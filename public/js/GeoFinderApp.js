@@ -26,8 +26,15 @@ GeoFinderApp.config(['$routeProvider', function($routeProvider){
     })
         .otherwise({
             redirectTo: '/index'
+        })
+        .when('/profile', {
+            templateUrl: './views/profile.html',
+            controller: 'ProfileCtrl'
+        })
+        .otherwise({
+            redirectTo: '/index'
         });
 
-    }]);
+}]);
 
 

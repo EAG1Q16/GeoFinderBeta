@@ -26,7 +26,8 @@ a {
 
 /*----------Footer Style-----------*/
 #Footer{
-  background-color: #8c8c8c;
+  background-color: #00ADB5;
+  color: white;
 }
 
 /*-------------------------------Global Styles-------------------------------------*/
@@ -40,7 +41,11 @@ a {
   border-radius: 2%;
 }
 
-
+/*---------Back containers colors------*/
+.bg-blue{
+  background-color: #00ADB5;
+  color: white;
+}
 
 
 
